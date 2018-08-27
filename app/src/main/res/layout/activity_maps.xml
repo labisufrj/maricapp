@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MapsActivity">
+
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        class="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        map:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toTopOf="parent"
+        tools:context=".MapsActivity" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/botaoAlimenticio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="200dp"
+        android:clickable="true"
+        android:focusable="true"
+        map:backgroundTint="@color/colorPrimary"
+        map:elevation="5dp"
+        map:layout_constraintBottom_toBottomOf="@+id/map"
+        map:layout_constraintStart_toStartOf="@+id/map"
+        map:layout_constraintTop_toTopOf="@+id/map"
+        map:layout_constraintVertical_bias="0.0"
+        map:srcCompat="@drawable/ic_restaurant_white_24dp" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/botaoFarmacos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        map:backgroundTint="@color/colorPrimary"
+        map:layout_constraintStart_toStartOf="@+id/botaoAlimenticio"
+        map:layout_constraintTop_toBottomOf="@+id/botaoAlimenticio"
+        map:srcCompat="@drawable/ic_local_hospital_white_24dp" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/botaoComercio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        map:backgroundTint="@color/colorPrimary"
+        map:layout_constraintStart_toStartOf="@+id/botaoAlimenticio"
+        map:layout_constraintTop_toBottomOf="@+id/botaoFarmacos"
+        map:srcCompat="@drawable/ic_business_center_white_24dp" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/buttonAddMarker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:clickable="true"
+        map:backgroundTint="@color/colorPrimary"
+        map:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:srcCompat="@drawable/ic_add_location_white_24dp" />
+
+</android.support.constraint.ConstraintLayout>
