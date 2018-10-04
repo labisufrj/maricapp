@@ -2,4 +2,7 @@
     <string name="app_name">MumbucApp</string>
     <string name="title_activity_maps">MumbucApp</string>
     <string name="button_text">Menu</string>
+    <string name="alimenticios">Alimentícios</string>
+    <string name="farmacos">Fármacos</string>
+    <string name="comercioGeral">Comércio Geral</string>
 </resources>

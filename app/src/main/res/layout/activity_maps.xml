@@ -11,7 +11,7 @@
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:map="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/map"
+        android:id="@+id/mapa"
         class="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -23,6 +23,42 @@
         map:layout_constraintStart_toStartOf="parent"
         map:layout_constraintTop_toTopOf="parent"
         tools:context=".MapsActivity" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        map:layout_constraintEnd_toEndOf="@+id/mapa"
+        map:layout_constraintStart_toStartOf="@+id/mapa"
+        map:layout_constraintTop_toTopOf="@+id/mapa" />
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerHorizontal="false"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:fadingEdge="none|vertical"
+        android:iconifiedByDefault="false"
+        android:orientation="vertical"
+        android:queryHint="Procurar"
+        android:visibility="visible"
+        map:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        map:layout_constraintEnd_toEndOf="@+id/toolbar"
+        map:layout_constraintStart_toStartOf="@+id/toolbar"
+        map:layout_constraintTop_toTopOf="@+id/toolbar" />
+
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/botaoAlimenticio"
@@ -36,9 +72,9 @@
         android:focusable="true"
         map:backgroundTint="@color/colorPrimary"
         map:elevation="5dp"
-        map:layout_constraintBottom_toBottomOf="@+id/map"
-        map:layout_constraintStart_toStartOf="@+id/map"
-        map:layout_constraintTop_toTopOf="@+id/map"
+        map:layout_constraintBottom_toBottomOf="@+id/mapa"
+        map:layout_constraintStart_toStartOf="@+id/mapa"
+        map:layout_constraintTop_toTopOf="@+id/mapa"
         map:layout_constraintVertical_bias="0.0"
         map:srcCompat="@drawable/ic_restaurant_white_24dp" />
 
@@ -64,20 +100,74 @@
         map:backgroundTint="@color/colorPrimary"
         map:layout_constraintStart_toStartOf="@+id/botaoAlimenticio"
         map:layout_constraintTop_toBottomOf="@+id/botaoFarmacos"
-        map:srcCompat="@drawable/ic_business_center_white_24dp" />
+        map:srcCompat="@drawable/ic_attach_money_white_24dp" />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/buttonAddMarker"
+        android:id="@+id/botaoAddEstabelecimento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:clickable="true"
+        android:focusable="true"
         map:backgroundTint="@color/colorPrimary"
-        map:layout_constraintBottom_toBottomOf="parent"
-        map:layout_constraintEnd_toEndOf="parent"
-        map:srcCompat="@drawable/ic_add_location_white_24dp"
+        map:layout_constraintBottom_toBottomOf="@+id/mapa"
+        map:layout_constraintEnd_toEndOf="@+id/mapa"
+        map:srcCompat="@drawable/ic_add_location_white_24dp" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/botaoAjuda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:clickable="true"
+        map:backgroundTint="@color/colorHelp"
+        map:layout_constraintBottom_toBottomOf="@+id/mapa"
+        map:layout_constraintStart_toStartOf="@+id/mapa"
+        map:srcCompat="@drawable/ic_help_white_24dp"
         android:focusable="true" />
+
+    <TextView
+        android:id="@+id/descAlimenticios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/alimenticios"
+        android:visibility="visible"
+        map:layout_constraintBottom_toBottomOf="@+id/botaoAlimenticio"
+        map:layout_constraintStart_toEndOf="@+id/botaoAlimenticio"
+        map:layout_constraintTop_toTopOf="@+id/botaoAlimenticio" />
+
+    <TextView
+        android:id="@+id/descFarmacos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/farmacos"
+        map:layout_constraintBottom_toBottomOf="@+id/botaoFarmacos"
+        map:layout_constraintStart_toEndOf="@+id/botaoFarmacos"
+        map:layout_constraintTop_toTopOf="@+id/botaoFarmacos" />
+
+    <TextView
+        android:id="@+id/descComercio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/comercioGeral"
+        map:layout_constraintBottom_toBottomOf="@+id/botaoComercio"
+        map:layout_constraintStart_toEndOf="@+id/botaoComercio"
+        map:layout_constraintTop_toTopOf="@+id/botaoComercio" />
 
 </android.support.constraint.ConstraintLayout>
